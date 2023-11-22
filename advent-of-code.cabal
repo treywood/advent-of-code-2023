@@ -1,0 +1,31 @@
+cabal-version:      3.8
+name:               advent-of-code
+version:            0.1.0.0
+license:            MIT
+license-file:       LICENSE
+author:             Trey Wood
+maintainer:         edwinjwood3rd@gmail.com
+category:           Toy
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common aoc-day
+    ghc-options: -Wall
+    build-depends:
+        base ^>=4.17.2.0,
+        advent-of-code:utils,
+        megaparsec,
+
+    default-language: GHC2021
+
+library utils
+    exposed-modules: Utils
+    hs-source-dirs: src
+    build-depends:
+        base ^>=4.17.2.0,
+        megaparsec,
+
+executable day-1
+    import:           aoc-day
+    main-is:          Main.hs
+    hs-source-dirs:   day-1
