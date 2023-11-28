@@ -13,13 +13,15 @@ common aoc-day
     ghc-options: -Wall
     build-depends:
         base ^>=4.17.2.0,
-        advent-of-code:utils,
+        advent-of-code:aoc-base,
         megaparsec,
 
     default-language: GHC2021
 
-library utils
-    exposed-modules: Utils
+library aoc-base
+    exposed-modules:
+        Aoc,
+        Aoc.Parser,
     hs-source-dirs: src
     build-depends:
         base ^>=4.17.2.0,
